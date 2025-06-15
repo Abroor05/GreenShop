@@ -1,0 +1,73 @@
+.cardsFile .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.6s ease;
+  text-decoration: none;
+}
+
+.card:hover .cardlike {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-img {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.card-img img {
+  width: 100%;
+}
+
+.card-info {
+    padding: 0 20px;
+}
+
+.card-info h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.card-info p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #46a358;
+}
+
+.cardlike {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 900;
+  position: absolute;
+  left: -100px;
+  transition: all 0.6s ease;
+  color: black;
+}
+
+.heardLike1:hover  {
+  color: #46a358;
+  cursor: pointer;
+}
+.heardLike2:hover  {
+  color: #46a358;
+  cursor: pointer;
+}
+
+.heardLike3:hover  {
+  color: #46a358;
+  cursor: pointer;
+}
+

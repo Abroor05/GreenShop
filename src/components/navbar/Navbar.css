@@ -1,0 +1,80 @@
+nav .container {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #46a35880;
+  margin-bottom: 50px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.links a {
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+
+.links a.active {
+  border-bottom: 1px solid;
+  border-color: green;
+  color: green;
+}
+
+nav .container .elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  gap: 20px;
+}
+
+nav .elements a{ 
+  text-decoration: none;
+  color: black  ;
+}
+
+nav .elements span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #46a358;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.shopes {
+  position: relative;
+  cursor: pointer;
+}
+
+.count {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  position: absolute;
+  font-size: 8px;
+  border-radius: 50%;
+  top: 0;
+  right: -5px;
+}
