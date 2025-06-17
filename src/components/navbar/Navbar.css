@@ -78,3 +78,10 @@ nav .elements span {
   top: 0;
   right: -5px;
 }
+
+.elements a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}

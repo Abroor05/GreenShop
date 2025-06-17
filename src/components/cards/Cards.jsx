@@ -14,7 +14,7 @@ function Cards({data}) {
                 <div className="card-img">
                   <img src={item.img} alt="" />
                   <span className="cardlike">
-                    <CiShoppingCart className="heardLike1" />
+                    <Link to={"/shoppincard"}><CiShoppingCart  className="heardLike1" /></Link>
                     <CiHeart className="heardLike2 " />
                     <CiSearch className="heardLike3" />
                   </span>

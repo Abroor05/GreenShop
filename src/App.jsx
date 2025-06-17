@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Error from "./pages/error/Error";
 import Shop from "./pages/shop/Shop";
 import ShoppingCards from "./pages/shoppingCards/ShoppingCards";
+import Login from "./pages/login/Login";
 
 function App() {
   const [footerData, setFooterData] = useState([
@@ -155,7 +156,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar homeData={homeData}/>
 
         <Routes>
           <Route
@@ -163,7 +164,8 @@ function App() {
             element={<Home homeData={homeData} element={<Home />} />}
           />
           <Route path="/shop/:id" element={<Shop homeData={homeData} />} />
-          <Route path="/shoppingcard" element={<ShoppingCards />} />
+          <Route path="/shoppingcard" element={<ShoppingCards homeData={homeData} />} />
+          <Route  path="/login" element={<Login/>}/>
           <Route path="*" element={<Error />} />
         </Routes>
 

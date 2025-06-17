@@ -11,7 +11,7 @@ function Navbar() {
       <nav>
         <div className="container">
           <div className="nav-img">
-            <img src="/public/imgs/logo.svg" alt="" />
+            <img src="/imgs/logo.svg" alt="" />
           </div>
 
           <ul className="links">
@@ -40,10 +40,10 @@ function Navbar() {
               </Link>
               <div className="count">0</div>
             </div>
-            <span>
+            <Link to={"/login"}>
               <TbLogin2 />
               <p>Login</p>
-            </span>
+            </Link>
           </div>
         </div>
       </nav>
