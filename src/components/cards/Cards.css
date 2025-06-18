@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .card {
   width: 250px;
+  background-color: white;
   overflow: hidden;
   position: relative;
   transition: all 0.6s ease;
@@ -28,7 +29,7 @@ flex-wrap: wrap;
 }
 
 .card-info {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .card-info h5 {
@@ -57,17 +58,16 @@ flex-wrap: wrap;
   color: black;
 }
 
-.heardLike1:hover  {
+.heardLike1:hover {
   color: #46a358;
   cursor: pointer;
 }
-.heardLike2:hover  {
-  color: #46a358;
-  cursor: pointer;
-}
-
-.heardLike3:hover  {
+.heardLike2:hover {
   color: #46a358;
   cursor: pointer;
 }
 
+.heardLike3:hover {
+  color: #46a358;
+  cursor: pointer;
+}

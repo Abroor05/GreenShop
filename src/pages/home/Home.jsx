@@ -1,12 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
-import { NavLink } from "react-router-dom";
-import { FaAngleDown, FaAngleRight, FaArrowRight } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
+import {
+  FaAngleDown,
+  FaAngleRight,
+  FaArrowRight,
+  FaFacebookF,
+} from "react-icons/fa";
 import Cards from "../../components/cards/Cards";
+import { FcGoogle } from "react-icons/fc";
+import { AiOutlineClose } from "react-icons/ai";
 
-function Home({ homeData }) {
+function Home({ homeData, setShowModal, showModal}) {
+
+  
+ 
   return (
     <>
+      {showModal && <div className="modal">
+          <div className="login">
+              <AiOutlineClose className="exit" onClick={()=>{
+                setShowModal(false)
+              }} />
+            <div className="modal-title">
+              <NavLink>Login</NavLink>
+              <NavLink>|</NavLink>
+              <NavLink>Register</NavLink>
+            </div>
+
+            <div className="inputs">
+              <p>Enter your username and password to login.</p>
+              <span>
+                <input type="email" placeholder="almamun_uxui@outlook.com" />
+                <input type="password" placeholder="Enter your email password" />
+              </span>
+              <Link className="forgot">Forgot Password?</Link>
+            </div>
+
+           <div className="loginBtn">
+             <button >Login</button>
+           </div>
+
+            <div className="chiziqlar">
+              <div className="chiziq"></div>
+              <p>Or login with</p>
+              <div className="chiziq"></div>
+            </div>
+
+            <div className="enterWith">
+              <span>
+                {" "}
+                <FcGoogle /> Login with Google
+              </span>
+              <span>
+                {" "}
+                <FaFacebookF /> Login with Facebook
+              </span>
+            </div>
+          </div>
+      </div>}
       <div className="homeHero">
         <div className="container">
           <div className="homeHero-left">
@@ -104,9 +156,9 @@ function Home({ homeData }) {
                   <div className="line2"></div>
                 </div>
 
-                <p className="pric">
+                <div className="pric">
                   Price: <p> $39 - $1230</p>
-                </p>
+                </div>
                 <button>Filter</button>
               </div>
 

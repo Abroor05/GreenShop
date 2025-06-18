@@ -5,7 +5,7 @@ import { TbLogin2 } from "react-icons/tb";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Navbar({setShowModal, showModal}) {
   return (
     <>
       <nav>
@@ -40,10 +40,12 @@ function Navbar() {
               </Link>
               <div className="count">0</div>
             </div>
-            <Link to={"/login"}>
+            <span onClick={()=>{
+              setShowModal(true)
+            }}>
               <TbLogin2 />
               <p>Login</p>
-            </Link>
+            </span>
           </div>
         </div>
       </nav>
