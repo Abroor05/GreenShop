@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Error from "./pages/error/Error";
 import Shop from "./pages/shop/Shop";
 import ShoppingCards from "./pages/shoppingCards/ShoppingCards";
+import Login from "./components/login/Login";
 
 function App() {
   const [footerData, setFooterData] = useState([
@@ -154,28 +155,38 @@ function App() {
 
   const [showModal, setShowModal] = useState(false);
 
+  const [cardData, setCardData] = useState([
+    {
+      id: 12424,
+      prodactId: 1,
+      name:"awsdbaeh",
+      price: 134235,
+      img: "wetwesgaas",
+      size: "xl"
+    },
+      {
+      id: 12424,
+      prodactId: 1,
+      name:"awsdbaeh",
+      price: 134235,
+      img: "wetwesgaas",
+      size: "xl"
+    } 
+  ])
+
   return (
     <>
       <BrowserRouter>
+
+      {
+        showModal == true ? <Login showModal={showModal} setShowModal={setShowModal} /> : ""
+      }
         <Navbar homeData={homeData} setShowModal={setShowModal} showModal={showModal} />
 
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                homeData={homeData}
-                element={<Home />}
-                showModal={showModal}
-                setShowModal={setShowModal}
-              />
-            }
-          />
+          <Route path="/" element={<Home homeData={homeData} element={<Home />} showModal={showModal} setShowModal={setShowModal} />}/>
           <Route path="/shop/:id" element={<Shop homeData={homeData} />} />
-          <Route
-            path="/shoppingcard"
-            element={<ShoppingCards homeData={homeData} />}
-          />{" "}
+          <Route path="/shoppingcard" element={<ShoppingCards homeData={homeData}  cardData={cardData} setCardData={setCardData}/>} />{" "}
           <Route path="*" element={<Error />} />
         </Routes>
 

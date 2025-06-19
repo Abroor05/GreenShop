@@ -3,7 +3,7 @@ import { LuTrash } from "react-icons/lu";
 import "./ShoppingCards.css";
 import { Link } from "react-router-dom";
 
-function ShoppingCards({ homeData }) {
+function ShoppingCards({ homeData, setCardData, cardData }) {
   const [plas, setPlas] = useState(0);
 
   return (
@@ -34,7 +34,7 @@ function ShoppingCards({ homeData }) {
             </div>
             <div className="all">
               <div className="allProdact">
-                {homeData?.map((item) => {
+                {cardData?.map((item) => {
                   return (
                     <div className="Products">
                       <div className="Product-left">
@@ -116,7 +116,7 @@ function ShoppingCards({ homeData }) {
                 </div>
 
                 <button className="check">Proceed To Checkout</button>
-                <Link>Continue Shopping</Link>
+                <p className="Continue">Continue Shopping</p>
               </div>
             </div>
           </div>

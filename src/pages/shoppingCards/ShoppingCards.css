@@ -8,11 +8,10 @@
 .all {
   display: flex;
   align-items: start;
-  border: 1px solid red;
+  justify-content: space-between;
 }
 
 .allProdact {
-  border: 1px solid;
   width: 70%;
 }
 
@@ -146,7 +145,6 @@
 
 .Product-right {
   width: 25%;
-  border: 1px solid;
 }
 
 .pTitle p {
@@ -165,7 +163,7 @@
 }
 
 .input input {
-  padding: 10px 30px;
+  padding: 10px 50px;
   padding-left: 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -185,23 +183,47 @@
 }
 
 .prodact-count {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .prodact-count span {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .price-total {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .price-total h3 {
-    color: #46a358;
+  color: #46a358;
+}
+
+.Product-right .check {
+  display: block;
+  padding: 8px 50px;
+  font-size: 18px;
+  margin: auto;
+  border: none;
+  background-color: #46a358;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+
+.Continue {
+  text-align: center;
+  color: #46a358;
+  cursor: pointer;
+}
+
+.shoppingCard-hero {
+  margin-bottom: 50px;
 }
