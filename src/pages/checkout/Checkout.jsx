@@ -8,6 +8,7 @@ function Checkout() {
         <div className="container">
           <div className="check-title">
             <h4>Home / Shop / Checkout</h4>
+            <h3>Billing Address</h3>
           </div>
 
           <div className="pay-inputs">
@@ -145,6 +146,10 @@ function Checkout() {
               </span>
             </div>
           </div>
+
+            <div className="order">
+                
+            </div>
         </div>
       </section>
     </>

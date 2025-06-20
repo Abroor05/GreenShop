@@ -1,3 +1,13 @@
+.check-title {
+    padding: 10px 0;
+}
+
+.check-title h4 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
 .pay-inputs {
   display: flex;
   align-items: stretch;
