@@ -8,6 +8,7 @@ import Error from "./pages/error/Error";
 import Shop from "./pages/shop/Shop";
 import ShoppingCards from "./pages/shoppingCards/ShoppingCards";
 import Login from "./components/login/Login";
+import Checkout from "./pages/checkout/Checkout";
 
 function App() {
   const [footerData, setFooterData] = useState([
@@ -22,7 +23,7 @@ function App() {
       id: 0,
       img: "/imgs/foter2.png",
       title: "Plant Renovation",
-      info: "We are an online plant shop offering a wide range of cheap and trendy plants.",
+      info: "We are an online plant shop offering a wide range of cheap and trendy plants."
     },
 
     {
@@ -165,14 +166,16 @@ function App() {
       size: "xl"
     },
       {
-      id: 12424,
-      prodactId: 1,
+      id: 12434,
+      prodactId: 2,
       name:"awsdbaeh",
       price: 134235,
       img: "wetwesgaas",
       size: "xl"
     } 
-  ])
+  ]);
+
+
 
   return (
     <>
@@ -186,7 +189,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home homeData={homeData} element={<Home />} showModal={showModal} setShowModal={setShowModal} />}/>
           <Route path="/shop/:id" element={<Shop homeData={homeData} />} />
-          <Route path="/shoppingcard" element={<ShoppingCards homeData={homeData}  cardData={cardData} setCardData={setCardData}/>} />{" "}
+          <Route path="/shoppingcard" element={<ShoppingCards cardData={cardData} setCardData={setCardData} homeData={homeData} />  } />
+          <Route path="/checkoute" element={<Checkout />} />
           <Route path="*" element={<Error />} />
         </Routes>
 

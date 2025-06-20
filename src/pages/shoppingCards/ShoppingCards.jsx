@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import { LuTrash } from "react-icons/lu";
 import "./ShoppingCards.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function ShoppingCards({ homeData, setCardData, cardData }) {
   const [plas, setPlas] = useState(0);
+
+  const { id } = useParams();
+
+  const filterData = homeData.filter((item) => {
+    return item.id == id;
+  });
+
+  
+
+ 
 
   return (
     <>
@@ -115,7 +125,7 @@ function ShoppingCards({ homeData, setCardData, cardData }) {
                   <h3>$2,699.00</h3>
                 </div>
 
-                <button className="check">Proceed To Checkout</button>
+                <Link to={'/checkoute'} > <button className="check">Proceed To Checkout</button></Link>
                 <p className="Continue">Continue Shopping</p>
               </div>
             </div>

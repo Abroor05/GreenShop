@@ -1,0 +1,60 @@
+.pay-inputs {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 600px;
+  border: 1px solid;
+}
+
+.pay-inputs span {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.pay-inputs span h4 {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.pay-inputs .inputs-left {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.inputs-right {
+    display: flex;
+    align-items: stretch;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.pay-inputs span h4 .star {
+    color: #F03800;
+}
+
+.pay-inputs span input {
+  padding: 9px 50px 9px 5px;
+}
+
+.pay-inputs span select {
+  padding: 10px 50px 10px 5px;
+}
+
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 50px ;
+}
+

@@ -217,6 +217,9 @@
   margin-bottom: 20px;
 }
 
+.Product-right  a {
+  text-decoration: none;
+}
 
 .Continue {
   text-align: center;
