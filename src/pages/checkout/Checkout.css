@@ -1,11 +1,18 @@
+.allOrder {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
 .check-title {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .check-title h4 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 .pay-inputs {
@@ -14,7 +21,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   width: 600px;
-  border: 1px solid;
 }
 
 .pay-inputs span {
@@ -26,30 +32,30 @@
 }
 
 .pay-inputs span h4 {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
 }
 
 .pay-inputs .inputs-left {
-    display: flex;
-    align-items: stretch;
-    justify-content: start;
-    flex-direction: column;
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+  flex-direction: column;
 }
 
 .inputs-right {
-    display: flex;
-    align-items: stretch;
-    justify-content: start;
-    flex-direction: column;
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+  flex-direction: column;
 }
 
 .pay-inputs span h4 .star {
-    color: #F03800;
+  color: #f03800;
 }
 
 .pay-inputs span input {
@@ -60,11 +66,127 @@
   padding: 10px 50px 10px 5px;
 }
 
-
 .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 50px ;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 50px;
 }
 
+/* right */
+
+.ordersPage {
+  width: 400px;
+}
+
+.ordersPage h4 {
+  font-weight: 500;
+}
+
+.order-title h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.order-title span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #46a35880;
+}
+
+.order-title span h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.order {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order .orderImg {
+  width: 70px;
+}
+
+.order .orderImg img {
+  width: 100%;
+}
+
+.order-left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.order-right {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+
+.order-info {
+  text-align: end;
+  right: 0;
+}
+
+.info-title h5 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.info-title h5 span {
+  color: #46a358;
+}
+
+.pays span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.view {
+  font-size: 12px;
+  color: #46a358;
+}
+
+.difPay {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.difPay span {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+.difPay span img {
+  display: block;
+  margin: 0;
+}
+
+.Btn {
+  margin: auto;
+}
+
+.orderBtn {
+  padding: 10px 160px;
+  margin: auto;
+  display: block;
+  border: none;
+  background-color: #46a358;
+  color: white;
+  border-radius: 10px;
+}
