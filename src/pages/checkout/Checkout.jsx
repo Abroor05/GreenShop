@@ -1,7 +1,7 @@
 import React from "react";
 import "./Checkout.css";
 
-function Checkout() {
+function Checkout({setShowPostModal, showPostModal}) {
   return (
     <>
       <section>
@@ -278,7 +278,9 @@ function Checkout() {
                 </div>
 
                 <div className="Btn">
-                  <button className="orderBtn">Place Order</button>
+                  <button onClick={()=>{
+                    setShowPostModal(true)
+                  }} className="orderBtn">Place Order</button>
                 </div>
               </div>
             </div>
