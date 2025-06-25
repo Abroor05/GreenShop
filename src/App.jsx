@@ -10,8 +10,12 @@ import ShoppingCards from "./pages/shoppingCards/ShoppingCards";
 import Login from "./components/login/Login";
 import Checkout from "./pages/checkout/Checkout";
 import CheckModal from "./components/checkModal/CheckModal";
+import Search from "./pages/search/Search";
 
 function App() {
+
+  
+
   const [footerData, setFooterData] = useState([
     {
       id: 0,
@@ -24,7 +28,7 @@ function App() {
       id: 0,
       img: "/imgs/foter2.png",
       title: "Plant Renovation",
-      info: "We are an online plant shop offering a wide range of cheap and trendy plants."
+      info: "We are an online plant shop offering a wide range of cheap and trendy plants.",
     },
 
     {
@@ -47,6 +51,7 @@ function App() {
         "https://previews.123rf.com/images/mindstormphoto/mindstormphoto1709/mindstormphoto170900178/87479329-orange-gerbera-daisy-with-both-full-flower-and-bud.jpg",
       ],
       size: ["X", "XL", "XX", "L"],
+      discount: 20,
     },
 
     {
@@ -60,6 +65,7 @@ function App() {
         "https://www.dahingplants.com/cdn/shop/products/detailSSP_2412_1.jpg?v=1642095960, https://hometoheather.com/wp-content/uploads/2021/01/mini-angel-wing-3.jpg",
       ],
       size: ["X", "XL"],
+      discount: 20,
     },
 
     {
@@ -73,6 +79,7 @@ function App() {
         "https://yardandgarden.extension.iastate.edu/files/inline-images/saintpaulia_bicolor_entire_plant_indoors_1.jpg",
       ],
       size: ["XL", "XX", "L"],
+      discount: 20,
     },
 
     {
@@ -86,6 +93,7 @@ function App() {
         "https://earthone.io/_next/image?url=https%3A%2F%2Fbs.plantnet.org%2Fimage%2Fo%2F262c2c46f933bf61fe7b5948df056821d2d962fa&w=3840&q=75",
       ],
       size: ["X", "XX", "L"],
+      discount: 20,
     },
 
     {
@@ -99,6 +107,7 @@ function App() {
         "https://plantquility.com/cdn/shop/files/Blushing_Bromeliad_hero_33425b3d-2893-4c53-8982-0573cb523a26_3024x.jpg?v=1632892533",
       ],
       size: ["X", "XL", "XX", "L"],
+      discount: 20,
     },
 
     {
@@ -112,6 +121,7 @@ function App() {
         "https://theplantboys.au/cdn/shop/products/IMG_6868-956350.jpg?v=1724381716&width=1445",
       ],
       size: ["X", "XL", "XX", "L"],
+      discount: 20,
     },
 
     {
@@ -125,6 +135,7 @@ function App() {
         "https://www.whiteflowerfarm.com/mas_assets/cache/image/8/e/7/e/36478.Jpg",
       ],
       size: ["X", "XL"],
+      discount: 20,
     },
 
     {
@@ -139,6 +150,7 @@ function App() {
         "https://treeworldwholesale.com/wp-content/uploads/2020/03/100Gal-Rhapis-excelsaIMG_1620-2.jpg",
       ],
       size: ["X", "XL", "L"],
+      discount: 20,
     },
 
     {
@@ -152,6 +164,7 @@ function App() {
         "https://m.media-amazon.com/images/I/81rfTyCDPRL.jpg",
       ],
       size: ["X", "XL", "XX", "L"],
+      discount: 20,
     },
   ]);
 
@@ -160,44 +173,117 @@ function App() {
   const [cardData, setCardData] = useState([
     {
       id: 12424,
-      prodactId: 1,
-      name:"awsdbaeh",
-      price: 134235,
-      img: "wetwesgaas",
-      size: "xl"
+      prodactId: 1, 
+      title: "awsdbaeh",
+      price: 23,
+      img: "/imgs/card2.png",
+      size: "x",
     },
-      {
-      id: 12434,
+    {
+      id: 235,
       prodactId: 2,
-      name:"awsdbaeh",
-      price: 134235,
-      img: "wetwesgaas",
-      size: "xl"
-    } 
+      title: "dfghjkl;",
+      price: 1335,
+      img: "/imgs/card3.png",
+      size: "xl",
+    },
   ]);
+    const [count, setCount] = useState(1)
 
-  const [showPostModal, setShowPostModal] = useState(false)
+  const [showPostModal, setShowPostModal] = useState(false);
+  const [searchFilterData, setSearchFilterData] = useState(homeData)
+
+
+  const addToCard = (homeData , count, size) => {
+    const obj = {
+      id: Math.floor(Math.random() * 123),
+      prodacId: homeData.id,
+      price: parseFloat(homeData.price?.replace("$", "")),
+      title: homeData.title,
+      discount: homeData.discount,
+      count: count,
+      imgs: homeData.imgs,
+      size: size,
+    };
+
+   setCardData(prev => [...prev, obj]);
+  };
+
+const searchFilter = (text)=>{
+  const filter = homeData?.filter((item)=>{
+    return item.title.toLocaleLowerCase().trim().replaceAll(" ", "").includes(text.toLocaleLowerCase().trim().replaceAll(" ", ""))
+  })
+
+  setSearchFilterData(filter)
+}
 
 
 
   return (
     <>
       <BrowserRouter>
+        {showModal == true ? (
+          <Login showModal={showModal} setShowModal={setShowModal} />
+        ) : (
+          ""
+        )}
 
-      {
-        showModal == true ? <Login showModal={showModal} setShowModal={setShowModal} /> : ""
-      }
-
-      {
-        showPostModal == true ? <CheckModal showPostModal={showPostModal} setShowPostModal={setShowPostModal} /> : ""
-      }
-        <Navbar homeData={homeData} setShowModal={setShowModal} showModal={showModal} />
+        {showPostModal == true ? (
+          <CheckModal
+            showPostModal={showPostModal}
+            setShowPostModal={setShowPostModal}
+          />
+        ) : (
+          ""
+        )}
+        <Navbar
+          searchFilter={searchFilter}
+          homeData={homeData}
+          setShowModal={setShowModal}
+          showModal={showModal}
+          cardData={cardData}
+        />
 
         <Routes>
-          <Route path="/" element={<Home homeData={homeData} element={<Home />} showModal={showModal} setShowModal={setShowModal} />}/>
-          <Route path="/shop/:id" element={<Shop homeData={homeData} />} />
-          <Route path="/shoppingcard" element={<ShoppingCards cardData={cardData} setCardData={setCardData} homeData={homeData} />  } />
-          <Route path="/checkoute" element={<Checkout showPostModal={showPostModal}  setShowPostModal={setShowPostModal}/>} />
+          <Route
+            path="/"
+            element={
+              <Home
+                homeData={homeData}
+                element={<Home />}
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
+            }
+          />
+          <Route
+            path="/shop/:id"
+            element={<Shop homeData={homeData} addToCard={addToCard} setHomeData={setHomeData} cardData={cardData} />}
+          />
+          <Route
+            path="/shoppingcard"
+            element={
+              <ShoppingCards
+                cardData={cardData}
+                setCardData={setCardData}
+                homeData={homeData}
+              />
+            }
+          />
+          <Route
+            path="/checkoute"
+            element={
+              <Checkout
+                showPostModal={showPostModal}
+                setShowPostModal={setShowPostModal}
+                cardData={cardData}
+                homeData={homeData}
+              />
+            }
+          />
+
+            <Route path="/search" element={<Search searchFilterData={searchFilterData} />} />
+
           <Route path="*" element={<Error />} />
         </Routes>
 

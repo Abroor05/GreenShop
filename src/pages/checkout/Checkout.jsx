@@ -157,7 +157,7 @@ function Checkout({setShowPostModal, showPostModal}) {
                 </span>
               </div>
 
-              <div className="orders">
+              <div className="orders">    
                 <div className="order">
                   <div className="order-left">
                     <div className="orderImg">

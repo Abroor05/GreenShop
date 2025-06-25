@@ -4,17 +4,25 @@ import "./ShoppingCards.css";
 import { Link, useParams } from "react-router-dom";
 
 function ShoppingCards({ homeData, setCardData, cardData }) {
-  const [plas, setPlas] = useState(0);
+  const [plas, setPlas] = useState(1);
 
   const { id } = useParams();
+  const [count, setCount] = useState(1);
 
   const filterData = homeData.filter((item) => {
     return item.id == id;
   });
 
-  
 
- 
+  const delateData = (id)=>{
+    
+
+    const filterCard = cardData.filter((item)=>{
+      return item.id != id
+    })
+
+    setCardData(filterCard)
+  }
 
   return (
     <>
@@ -51,7 +59,7 @@ function ShoppingCards({ homeData, setCardData, cardData }) {
                         <div className="Product">
                           <div className="Pro-left">
                             <span className="pro-img">
-                              <img src="/imgs/card1.png" alt="" />
+                              <img src={item.img} alt="" />
                             </span>
                             <span>
                               <h4>{item.title}</h4>
@@ -66,18 +74,18 @@ function ShoppingCards({ homeData, setCardData, cardData }) {
                             <div className="pro-count">
                               <span
                                 onClick={() => {
-                                  if (plas > 0) {
-                                    setPlas(plas - 1);
+                                  if (count > 1) {
+                                    setCount(count - 1);
                                   }
                                 }}
                                 className="add tugma"
                               >
                                 -
                               </span>
-                              <h3 className="plasCount">{plas}</h3>
+                              <h3 className="plasCount">{count}</h3>
                               <span
                                 onClick={() => {
-                                  setPlas(plas + 1);
+                                  setCount(count + 1);
                                 }}
                                 className="remove tugma"
                               >
@@ -87,7 +95,9 @@ function ShoppingCards({ homeData, setCardData, cardData }) {
 
                             <div className="pro-total">
                               <h3>$119.00</h3>
-                              <LuTrash className="trash" />
+                              <LuTrash className="trash" onClick={()=>{
+                                delateData(item.id)
+                              }} />
                             </div>
                           </div>
                         </div>
@@ -125,10 +135,13 @@ function ShoppingCards({ homeData, setCardData, cardData }) {
                   <h3>$2,699.00</h3>
                 </div>
 
-                <Link to={'/checkoute'} > <button className="check">Proceed To Checkout</button></Link>
+                <Link to={"/checkoute"}>
+                  {" "}
+                  <button className="check">Proceed To Checkout</button>
+                </Link>
                 <p className="Continue">Continue Shopping</p>
               </div>
-            </div>
+            </div>  
           </div>
         </div>
       </section>

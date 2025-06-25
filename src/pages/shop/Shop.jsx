@@ -11,19 +11,24 @@ import {
 } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
-function Shop({ homeData }) {
-  const [add, setAdd] = useState(0);
+function Shop({ homeData, addToCard, setHomeData}) {
+
+
   const [modal, setModal] = useState();
 
   const { id } = useParams();
-  console.log(id);
+  const [count, setCount] = useState(1)
+
 
   const filterData = homeData.filter((item) => {
     return item.id == id;
   });
+
+  console.log(filterData[0]);
+  
+
   const [checkImg, setCheckImg] = useState(filterData[0]?.img);
 
-  console.log(filterData[0].imgs);
 
   return (
     window.scrollTo({
@@ -104,18 +109,18 @@ function Shop({ homeData }) {
                       <span
                         className="minus"
                         onClick={() => {
-                          if (add > 0) {
-                            setAdd(add - 1);
+                          if (count > 0) {
+                            setCount(count - 1);
                           }
                         }}
                       >
                         -
                       </span>
-                      <h3 className="countProdacts">{add}</h3>
+                      <h3 className="countProdacts">{count}</h3>
                       <span
                         className="plas"
                         onClick={() => {
-                          setAdd(add + 1);
+                          setCount(count + 1);
                         }}
                       >
                         +
@@ -124,7 +129,10 @@ function Shop({ homeData }) {
 
                     <div className="btns">
                       <button>Buy NOW</button>
-                      <button>Add to cart</button>
+                      <button className="addCards" onClick={()=>{
+                        addToCard(filterData[0], count)
+                       
+                      }}>Add to cart</button>
                       <span>
                         <FaRegHeart />
                       </span>

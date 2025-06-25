@@ -4,8 +4,10 @@ import { FiShoppingCart } from "react-icons/fi";
 import { TbLogin2 } from "react-icons/tb";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
-function Navbar({setShowModal}) {
+function Navbar({setShowModal, cardData, searchFilter}) {
   return (
     <>
       <nav>
@@ -33,12 +35,20 @@ function Navbar({setShowModal}) {
           </ul>
 
           <div className="elements">
-            <CiSearch className="search" />
+            <Link to={"/search"}>
+               
+                <TextField onInput={(e)=>{
+                  console.log(e.target.value);
+                }} id="standard-basic" label="Standard" variant="standard" />
+              <CiSearch className="search" onClick={()=>{
+            }} />
+
+            </Link>
             <div className="shopes">
               <Link to={"/shoppingcard"}>
                 <FiShoppingCart className="shopingBags" />
               </Link>
-              <div className="count">0</div>
+              <div className="count">{cardData.length}</div>
             </div>
             <span onClick={()=>{
               setShowModal(true)

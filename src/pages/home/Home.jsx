@@ -11,7 +11,7 @@ import Cards from "../../components/cards/Cards";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
 
-function Home({ homeData, setShowModal, showModal}) {
+function Home({ item, addToCard}) {
 
   
  
@@ -144,7 +144,7 @@ function Home({ homeData, setShowModal, showModal}) {
             </div>
             <div className="catigory-right">
               <span className="Cards">
-                <Cards data={homeData} />
+                <Cards item={item} addToCard={addToCard} />
               </span>
 
               <div className="bolim">

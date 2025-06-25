@@ -1,23 +1,92 @@
 .checkModal {
-    width: 100%;
-    height: 100vh;
-    background-color: #c2c2c44c;
-    position: fixed;
-    z-index: 9;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #c2c2c44c;
+  position: fixed;
+  z-index: 9;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .totalModal {
-    width: 500px;
-    background-color: white;
-    position: relative;
+  width: 600px;
+  background-color: white;
+  position: relative;
+  padding: 20px;
 }
 
 .close {
-    position: absolute;
-    right: 10px;
-    top: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+/* total */
+
+.total-title {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 0;
+  border-top: 1px solid #d1e9d6;
+  border-bottom: 1px solid #d1e9d6;
+}
+
+.information span {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.information span p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #727272;
+}
+
+.information span h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #727272;
+}
+
+.information .borders {
+  border-left: 1px solid #d1e9d6;
+  border-right: 1px solid #d1e9d6;
+  padding: 0 10px;
+}
+
+.modalOrder-title {
+  padding: 10px 0;
+  border-bottom: 1px solid #d1e9d6;
+}
+
+.modalOrder-title .Details {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.modalOrder-title .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalOrder-title .title span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }

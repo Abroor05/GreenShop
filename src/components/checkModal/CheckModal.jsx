@@ -1,6 +1,7 @@
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import "./CheckModal.css";
+import LittleCard from "../littleCard/LittleCard";
 
 function CheckModal({ showPostModal, setShowPostModal }) {
   return (
@@ -16,7 +17,7 @@ function CheckModal({ showPostModal, setShowPostModal }) {
             />
             <div className="total-title">
               <span>
-                <img src="/public/imgs/post.png" alt="" />
+                <img src="/imgs/post.png" alt="" />
                 <p>Your order has been received</p>
               </span>
             </div>
@@ -26,12 +27,12 @@ function CheckModal({ showPostModal, setShowPostModal }) {
                 <p>Order Number</p>
                 <h4>19586687</h4>
               </span>
-              <span>
+              <span className="borders">
                 <p>Date</p>
                 <h4>15 Sep, 2021</h4>
               </span>
 
-              <span>
+              <span className="borders">
                 <p>Total</p>
                 <h4>2,699.00</h4>
               </span>
@@ -40,6 +41,29 @@ function CheckModal({ showPostModal, setShowPostModal }) {
                 <p>Payment Method</p>
                 <h4>Cash on delivery</h4>
               </span>
+            </div>
+
+            <div className="modalOrder-title">
+              <h4 className="Details">Order Details</h4>
+
+              <div className="title">
+                <h4>Products</h4>
+
+                <span>
+                  <h4>Qty</h4>
+                  <h4>Subtotal </h4>
+                </span>
+              </div>
+
+              <div className="produkts">
+                <LittleCard/>
+              </div>
+
+              <div className="price-total">
+                <div className="shopping">
+                  <h4></h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
